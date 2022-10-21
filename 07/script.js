@@ -10,12 +10,15 @@ window.onload = () => {
 
 
     function fullScreen() {
-        alert('yes')
-        //asdf
         if (!document.fullscreenElement) {
-            canvas1.requestFullscreen().catch(e => alert('Your broswer not support!'))
+             try{
+                canvas1.requestFullscreen().catch(e => alert('Your broswer not support!'))
+                canvas1.webkitEnterFullscreen() 
+            }catch(e) {
+
+            }
         }else {
-            alert('no')
+   
             document.exitFullscreen()
         }
     }
